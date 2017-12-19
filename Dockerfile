@@ -7,4 +7,7 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo ap
 && wget https://chromedriver.storage.googleapis.com/2.33/chromedriver_linux64.zip \
 && unzip chromedriver_linux64.zip -d /usr/local/bin \
 && rm chromedriver_linux64.zip \
-&& chmod +x /usr/local/bin/chromedriver
+&& chmod +x /usr/local/bin/chromedriver \
+&& apt-get -y autoremove \
+&& apt-get autoclean \
+&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
